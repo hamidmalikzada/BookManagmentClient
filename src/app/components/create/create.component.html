@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Add a new book</h2>
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Publishing date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Select a category</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let category of Category | keyvalue" [value]="category.key">
+            {{category.value}}
+          </mat-option>
+        </mat-select>
+        
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Select a publisher</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let publisher of publishers" [value]="publisher">
+            {{publisher.publisherName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Select authors</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let author of authors" [value]="author">
+            {{author.firstName}} {{author.lastName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary"> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="save"></mat-icon>Save</button>
+      
+</div>

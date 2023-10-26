@@ -1,0 +1,22 @@
+
+.mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+    cursor: pointer;
+  }
+
+  .container {
+    margin: auto;
+    width: 95%;
+    padding: 10px;
+  }
+
+  .demo-button {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .action-cell {
+    display: flex;
+    justify-content: flex-end;
+  }
+  

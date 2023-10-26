@@ -1,0 +1,68 @@
+
+<div class="container">
+  <h1>Details</h1>
+<ng-container *ngIf="origin === 'author'">
+<mat-table [dataSource]="data.authoredBooks">
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+      <mat-cell *matCellDef="let book"> {{book.title}} </mat-cell>
+    </ng-container>
+  
+    <!-- Publishing Date Column -->
+    <ng-container matColumnDef="publishingDate">
+      <mat-header-cell *matHeaderCellDef> Publishing Date </mat-header-cell>
+      <mat-cell *matCellDef="let book"> {{book.publishingDate | date:'mediumDate'}} </mat-cell>
+    </ng-container>
+  
+    <!-- Category Column -->
+    <ng-container matColumnDef="categori">
+      <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+      <mat-cell *matCellDef="let book"> {{Category[book.categori]}} </mat-cell>
+    </ng-container>
+  
+    <!-- Publisher Name Column -->
+    <ng-container matColumnDef="publisherName">
+      <mat-header-cell *matHeaderCellDef> Publisher Name </mat-header-cell>
+      <mat-cell *matCellDef="let book"> {{book.publisherName}} </mat-cell>
+    </ng-container>
+  
+  
+    <!-- Define the columns to be displayed in the table -->
+    <ng-container >
+        <mat-header-row *matHeaderRowDef="['title', 'publishingDate', 'categori', 'publisherName']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['title', 'publishingDate', 'categori', 'publisherName']" ></mat-row>
+    </ng-container> 
+  </mat-table>
+</ng-container>
+</div>
+
+<div class="container">
+<ng-container *ngIf="origin === 'publisher'">
+    <mat-table [dataSource]="data.publishedBooks">
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+          <mat-cell *matCellDef="let book"> {{book.title}} </mat-cell>
+        </ng-container>
+      
+        <!-- Publishing Date Column -->
+        <ng-container matColumnDef="publishingDate">
+          <mat-header-cell *matHeaderCellDef> Publishing Date </mat-header-cell>
+          <mat-cell *matCellDef="let book"> {{book.publishingDate | date:'mediumDate'}} </mat-cell>
+        </ng-container>
+      
+        <!-- Category Column -->
+        <ng-container matColumnDef="categori">
+          <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+          <mat-cell *matCellDef="let book"> {{Category[book.categori]}} </mat-cell>
+        </ng-container>
+      
+        <!-- Define the columns to be displayed in the table -->
+        <ng-container >
+            <mat-header-row *matHeaderRowDef="['title', 'publishingDate', 'categori']"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ['title', 'publishingDate', 'categori']" ></mat-row>
+        </ng-container> 
+      </mat-table>
+    </ng-container>
+  </div>

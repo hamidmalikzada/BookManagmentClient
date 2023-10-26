@@ -1,0 +1,9 @@
+
+.mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+  .container {
+    margin: auto;
+    width: 95%;
+    padding: 10px;
+  }

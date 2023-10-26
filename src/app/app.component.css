@@ -1,0 +1,16 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+  .toolbar{
+    background-color: antiquewhite;
+  }
+  .toolbar-logo{
+    margin-left: 40px;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+
+  .sign-in{
+    margin-right: 40px;
+  }

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="demo-button-container">
+    <button mat-stroked-button color="primary" class="demo-button">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="add"
+      ></mat-icon>
+      Add publisher
+    </button>
+  </div>
+
+  <mat-table [dataSource]="publisher">
+    <!-- Publisher Name Column -->
+    <ng-container matColumnDef="publisherName">
+      <mat-header-cell *matHeaderCellDef> Publisher Name </mat-header-cell>
+      <mat-cell *matCellDef="let pub"> {{ pub.publisherName }} </mat-cell>
+    </ng-container>
+
+    <!-- Delete Icon Column -->
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef class="action-cell">
+        Actions
+      </mat-header-cell>
+      <mat-cell *matCellDef="let book" class="action-cell">
+        <button mat-icon-button color="primary">
+          <mat-icon aria-hidden="false" aria-label="Edit icon">edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn">
+          <mat-icon aria-hidden="false" aria-label="Delete icon"
+            >delete</mat-icon
+          >
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Define the columns to be displayed in the table -->
+    <mat-header-row
+      *matHeaderRowDef="['publisherName', 'delete']"
+    ></mat-header-row>
+    <mat-row
+      *matRowDef="let row; columns: ['publisherName', 'delete']"
+      (click)="onRowClicked(row)"
+    ></mat-row>
+  </mat-table>
+</div>
