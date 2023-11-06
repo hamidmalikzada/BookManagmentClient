@@ -1,11 +1,12 @@
 export interface Book {
-    id: number
+    id: number 
     title: string
-    publishingDate: string
+    publishingDate: Date
     categori: number
     publisherName: string
     authorNames: string
     authors: Author[]
+    authorIds: []
   }
   
   export interface Author {

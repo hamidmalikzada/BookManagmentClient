@@ -1,5 +1,6 @@
 
-<div class="container">
+<mat-spinner *ngIf="isLoading" class="loading-spinner"></mat-spinner>
+<div class="container" *ngIf="!isLoading">
 <div class="demo-button-container">
   <button mat-stroked-button color="primary" class="demo-button" (click)="onAddBtnCliked()">
     <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
@@ -57,10 +58,8 @@
         <button mat-icon-button color="primary">
           <mat-icon aria-hidden="false" aria-label="Edit icon">edit</mat-icon>
         </button>
-        <button mat-icon-button color="warn">
-          <mat-icon aria-hidden="false" aria-label="Delete icon"
-            >delete</mat-icon
-          >
+        <button mat-icon-button color="warn" (click)="openConfirmDialog(book.id)">
+          <mat-icon aria-hidden="false" aria-label="Delete icon">delete</mat-icon>
         </button>
       </mat-cell>
     </ng-container>

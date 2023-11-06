@@ -16,11 +16,6 @@ export class AuthorComponent implements OnInit {
   Category = Category;
   constructor(private authorService: AuthorService, private sharedService: SharedService, private router: Router) { 
   }
-  // ngOnInit(): void {
-
-  //   this.authorService.getAuthors().subscribe((author) => {this.author = author; console.log(this.author);
-  //   });
-  // }    
 
   ngOnInit(): void {
     this.authorService.getAuthors().subscribe((author) => {
